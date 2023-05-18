@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import kingIcon from "../../assets/image/carKing.png"
+import { AuthContext } from '../../contexts/AuthProvider';
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+
+            })
+            .catch(error => console.log())
+
+    }
 
     const navItems = <>
         <li> <Link to="/">Home</Link> </li>
         <li> <Link to="/about">About</Link> </li>
-        <li> <Link to="/Login">Login</Link> </li>
+
     </>
 
     return (
@@ -21,7 +33,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <img className='w-12 mr-4' src={kingIcon} alt="" />
-                <h1 className="text-2xl font-bold text-green-400"><span className='text-green-600'>Cars</span> King</h1>
+                <h1 className="text-xl md:text-2xl font-bold text-green-400"><span className='text-green-600'>Cars</span> King</h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -29,7 +41,12 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                {
+                    user ? <><button className='btn btn-success btn-md mr-4'><Link onClick={handleLogOut}>LogOut</Link></button>
+                        <img className="w-12 rounded-full" src={user.photoURL} /></>
+                        : <button className='btn btn-success btn-md'><Link to="/Login">Login</Link></button>
+                }
+
             </div>
         </div>
     );
