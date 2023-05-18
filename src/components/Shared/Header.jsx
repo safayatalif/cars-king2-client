@@ -17,7 +17,10 @@ const Header = () => {
 
     const navItems = <>
         <li> <Link to="/">Home</Link> </li>
-        <li> <Link to="/all">All Toys</Link> </li>
+        <li> <Link to="/all-toys">All Toys</Link> </li>
+        {
+            user && <li> <Link to="/add-toys">Add Toys</Link> </li>
+        }
 
     </>
 

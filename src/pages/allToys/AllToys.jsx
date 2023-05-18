@@ -4,18 +4,25 @@ import TableRow from '../../components/tableRow/TableRow';
 
 const AllToys = () => {
     const carsData = useLoaderData();
-    console.log(carsData)
 
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
+                <h1 className='text-3xl font-bold'>All Toys</h1>
+                <p>Welcome to our Cars Toy Collection! Explore a
+                    diverse range of meticulously crafted toy cars,
+                    from classic sports cars to rugged off-road monsters.
+                    Each car showcases incredible attention to detail, with
+                    functional parts and vibrant colors.
+                </p>
+            </div>
+            <div className="overflow-x-auto m-4">
                 <table className="table-normal text-center w-full">
-                    {/* head */}
-                    <thead>
+                    <thead className='bg-green-200'>
                         <tr>
                             <th>Toy</th>
                             <th>Seller</th>
-                            <th>Sub Category</th>
+                            <th>Category</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Action</th>
