@@ -3,7 +3,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 rounded-lg">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="max-w-sm rounded-lg shadow-2xl">
                     <div className=" carousel rounded-box">
