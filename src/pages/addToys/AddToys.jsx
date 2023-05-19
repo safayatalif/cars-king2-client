@@ -8,10 +8,8 @@ const AddToys = () => {
     const { user } = useContext(AuthContext);
 
 
-    const { register, handleSubmit, watch, reset , formState: { errors } } = useForm();
+    const { register, handleSubmit, reset , formState: { errors } } = useForm();
     const onSubmit = data => {
-        // const options = { method: 'POST', body: 'false' };
-
         fetch('http://localhost:5000/addToyCars', {
             method: 'POST',
             headers: {
@@ -37,7 +35,6 @@ const AddToys = () => {
         console.log(data)
     };
 
-    console.log(watch("toyName"));
     return (
         <div>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>

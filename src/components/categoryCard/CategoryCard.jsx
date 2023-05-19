@@ -1,16 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CategoryCard = ({carToy}) => {
+const CategoryCard = ({ carToy }) => {
+    const { pictureURL, toyName, price, rating, _id } = carToy || {};
+
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
-                <img src={carToy.pictureURL} alt="Shoes" className="rounded-xl" />
+        <div className="card w-full bg-base-100 shadow-xl">
+            <figure className="px-4 pt-4">
+                <img src={pictureURL} alt="Shoes" className="rounded-xl h-56 w-full" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">{toyName}</h2>
+                <div className="rating">
+                    <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                    <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                    <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                    <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                    <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                </div>
+                <p><span className='font-bold'>Rating:</span>{rating}</p>
+                <p><span className='font-bold'>Price:</span>{price}</p>
+
                 <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <Link to={`/toy-details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                 </div>
             </div>
         </div>
