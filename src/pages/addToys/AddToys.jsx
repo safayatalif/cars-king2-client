@@ -22,7 +22,7 @@ const AddToys = () => {
             .then(response => response.json())
             .then(response => {
                 console.log(response)
-                if(response.insertedId){
+                if(response?.insertedId){
                     Swal.fire({
                         icon: 'success',
                         title: 'Your work has been saved',
@@ -108,7 +108,7 @@ const AddToys = () => {
                         <option value="regular-cars">Regular Cars</option>
                         <option value="Sports-cars">Sports Cars</option>
                         <option value="truck-cars">Truck Cars</option>
-                        <option value="Miniature-cars">Miniature Cars</option>
+                        <option value="Police-cars">Police Cars</option>
                         <option value="Remote-controlled-cars">Remote Controlled Cars</option>
                     </select>
                 </div>
