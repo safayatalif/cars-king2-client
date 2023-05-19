@@ -46,7 +46,7 @@ const Header = () => {
             <div className="navbar-end">
                 {
                     user ? <><button className='btn btn-success btn-md mr-4'><Link onClick={handleLogOut}>LogOut</Link></button>
-                        <img className="w-12 rounded-full" src={user.photoURL} /></>
+                        <img className="w-12 rounded-full" title={user?.displayName} src={user?.photoURL} /></>
                         : <button className='btn btn-success btn-md'><Link to="/Login">Login</Link></button>
                 }
 

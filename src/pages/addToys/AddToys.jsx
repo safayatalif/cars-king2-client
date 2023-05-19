@@ -1,71 +1,107 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
+import { AuthContext } from './../../contexts/AuthProvider';
 
 const AddToys = () => {
+    const { user } = useContext(AuthContext);
+
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        // const options = { method: 'POST', body: 'false' };
 
-    console.log(watch("example"));
+        fetch('http://localhost:5000/addToyCars', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+        console.log(data)
+    };
+
+    console.log(watch("toyName"));
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="First name" {...register("First name", { required: true, maxLength: 80 })} />
-                <input type="text" placeholder="Last name" {...register("Last name", { required: true, maxLength: 100 })} />
-                <input type="text" placeholder="Email" {...register("Email", { required: true, pattern: /^\S+@\S+$/i })} />
-                <input type="tel" placeholder="Mobile number" {...register("Mobile number", { required: true, minLength: 6, maxLength: 12 })} />
-                <select {...register("Title", { required: true })}>
-                    <option value="Mr">Mr</option>
-                    <option value="Mrs">Mrs</option>
-                    <option value="Miss">Miss</option>
-                    <option value="Dr">Dr</option>
-                </select>
-
-                <input {...register("Developer", { required: true })} type="radio" value="Yes" />
-                <input {...register("Developer", { required: true })} type="radio" value="No" />
-
-                <input type="submit" />
-            </form>
-            {/* <form onSubmit={handleSubmit(onSubmit)}>
-                <input defaultValue="test" {...register("name")} />
-
-                <input {...register("email", { required: true })} />
-
-
-                {errors.exampleRequired && <span>This field is required</span>}
-                <input type="submit" className='btn btn-success' />
-            </form> */}
-            {/* <form  className="card-body" onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <input className="input input-bordered" defaultValue="test" {...register("name", { required: true })} />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Photo URL</span>
-                            </label>
-                            <input className="input input-bordered" {...register("email", { required: true })} />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input className="input input-bordered" {...register("email", { required: true })} />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" />
-                        </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
-                        </div>
+            <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
+                <h1 className='text-3xl font-bold'>Add A Toys</h1>
+                <p>Discover your dream toy car with our convenient
+                    Toy Car Form! Simply fill
+                    out the form with your preferences .
+                </p>
+            </div>
+            <form className="card-body bg-green-100 rounded-lg m-8 w-3/4 mx-auto" onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Toy Name</span>
+                    </label>
+                    <input className="input input-bordered" type='text' {...register("toyName", { required: true })} />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Photo URL</span>
+                    </label>
+                    <input className="input input-bordered" type='url' {...register("pictureURL", { required: true })} />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Seller Email</span>
+                    </label>
+                    <input className="input input-bordered" type='email' readOnly defaultValue={user?.email} {...register("sellerEmail", { required: true })} />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Seller Name</span>
+                    </label>
+                    <input className="input input-bordered" type='name' defaultValue={user?.displayName} {...register("sellerName", { required: true })} />
+                </div>
+                <div className='md:flex gap-4'>
+                    <div className="form-control md:w-1/3">
                         <label className="label">
+                            <span className="label-text">Price</span>
                         </label>
-                    </form> */}
+                        <input className="input input-bordered" type='text' defaultValue="$" {...register("price", { required: true })} />
+                    </div>
+                    <div className="form-control md:w-1/3">
+                        <label className="label">
+                            <span className="label-text">Rating</span>
+                        </label>
+                        <input className="input input-bordered" type='number' min="0" max="5" step="0.1" {...register("rating", { required: true })} />
+                    </div>
+                    <div className="form-control md:w-1/3">
+                        <label className="label">
+                            <span className="label-text">Available Quantity</span>
+                        </label>
+                        <input className="input input-bordered" type='number' {...register("availableQuantity", { required: true })} />
+                    </div>
+                </div>
+
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Detail Description</span>
+                    </label>
+                    <textarea className="textarea textarea-success" type='text' placeholder="Detail Description" {...register("detailDescription", { required: true })}></textarea>
+                </div>
+
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Sub Category</span>
+                    </label>
+                    <select className='input input-bordered' {...register("subCategory", { required: true })}>
+                        <option value="regular-cars">Regular Cars</option>
+                        <option value="Sport-cars">Sport Cars</option>
+                        <option value="truck-cars">Truck Cars</option>
+                        <option value="Miniature-cars">Miniature Cars</option>
+                        <option value="Remote-controlled-cars">Remote Controlled Cars</option>
+                    </select>
+                </div>
+                <div className="form-control mt-6">
+                    <input className="btn btn-primary" type="submit" />
+                </div>
+            </form>
         </div>
 
     );

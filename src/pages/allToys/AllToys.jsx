@@ -16,7 +16,7 @@ const AllToys = () => {
                     functional parts and vibrant colors.
                 </p>
             </div>
-            <div className="overflow-x-auto m-4">
+            <div className="overflow-x-auto m-8">
                 <table className="table-normal text-center w-full">
                     <thead className='bg-green-200'>
                         <tr>
