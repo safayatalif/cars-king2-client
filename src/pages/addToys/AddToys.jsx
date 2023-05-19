@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from './../../contexts/AuthProvider';
+import Swal from 'sweetalert2'
+
 
 const AddToys = () => {
     const { user } = useContext(AuthContext);
 
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, reset , formState: { errors } } = useForm();
     const onSubmit = data => {
         // const options = { method: 'POST', body: 'false' };
 
@@ -18,7 +20,19 @@ const AddToys = () => {
             body: JSON.stringify(data),
         })
             .then(response => response.json())
-            .then(response => console.log(response))
+            .then(response => {
+                console.log(response)
+                if(response.insertedId){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                      reset()
+
+                }
+            })
             .catch(err => console.error(err));
         console.log(data)
     };
@@ -50,13 +64,13 @@ const AddToys = () => {
                     <label className="label">
                         <span className="label-text">Seller Email</span>
                     </label>
-                    <input className="input input-bordered" type='email' readOnly defaultValue={user?.email} {...register("sellerEmail", { required: true })} />
+                    <input className="input input-bordered" type='email' readOnly defaultValue={user?.email} {...register("sellerEmail")} />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Seller Name</span>
                     </label>
-                    <input className="input input-bordered" type='name' defaultValue={user?.displayName} {...register("sellerName", { required: true })} />
+                    <input className="input input-bordered" type='name' readOnly defaultValue={user?.displayName} {...register("sellerName")} />
                 </div>
                 <div className='md:flex gap-4'>
                     <div className="form-control md:w-1/3">
@@ -92,7 +106,7 @@ const AddToys = () => {
                     </label>
                     <select className='input input-bordered' {...register("subCategory", { required: true })}>
                         <option value="regular-cars">Regular Cars</option>
-                        <option value="Sport-cars">Sport Cars</option>
+                        <option value="Sports-cars">Sports Cars</option>
                         <option value="truck-cars">Truck Cars</option>
                         <option value="Miniature-cars">Miniature Cars</option>
                         <option value="Remote-controlled-cars">Remote Controlled Cars</option>
