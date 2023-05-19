@@ -44,7 +44,7 @@ const AddToys = () => {
                     out the form with your preferences .
                 </p>
             </div>
-            <form className="card-body bg-green-100 rounded-lg m-8 w-3/4 mx-auto" onSubmit={handleSubmit(onSubmit)}>
+            <form className="card-body bg-green-100 rounded-lg m-8 w-full md:w-3/4 mx-auto" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Toy Name</span>
@@ -110,7 +110,7 @@ const AddToys = () => {
                     </select>
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary" type="submit" />
+                    <input className="btn btn-primary" type="submit"/>
                 </div>
             </form>
         </div>

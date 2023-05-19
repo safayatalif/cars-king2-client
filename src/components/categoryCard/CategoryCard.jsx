@@ -22,7 +22,7 @@ const CategoryCard = ({ carToy }) => {
                 <p><span className='font-bold'>Price:</span>{price}</p>
 
                 <div className="card-actions">
-                    <Link to={`/toy-details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+                    <Link to={`/toy-details/${_id}`}><button className="btn btn-success btn-outline">View Details</button></Link>
                 </div>
             </div>
         </div>

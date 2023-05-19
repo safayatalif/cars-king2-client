@@ -5,9 +5,9 @@ const ToyDetails = () => {
     const toysData = useLoaderData();
     const { pictureURL, toyName, price, rating, _id, sellerName, sellerEmail, detailDescription, subCategory, availableQuantity } = toysData || {};
     return (
-        <div className="hero min-h-screen bg-base-200 rounded-lg my-12 p-4">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={pictureURL} className="w-full md:w-1/2 rounded-lg shadow-2xl" />
+        <div className="hero bg-base-200 rounded-lg my-12 p-4">
+            <div className="hero-content flex-col md:flex-row-reverse">
+                <img src={pictureURL} className="w-full md:w-1/2 h-80 rounded-lg" />
                 <div className='space-y-4'>
                     <h1 className="text-5xl font-bold">{toyName}</h1>
                     <p className="py-6">{detailDescription}</p>
@@ -15,9 +15,16 @@ const ToyDetails = () => {
                     <p><span className='font-bold'>Seller Email : </span>{sellerEmail}</p>
                     <p><span className='font-bold'>Sub Category : </span>{subCategory}</p>
                     <p><span className='font-bold'>Available Quantity : </span>{availableQuantity}</p>
-                    <p><span className='font-bold'>Rating:</span>{rating}</p>
-                    <p><span className='font-bold'>Price:</span>{price}</p>
-                    <button className="btn btn-outline btn-success">Buy Now</button>
+                    <p><span className='font-bold'>Rating : </span>{rating}</p>
+                    <div className="rating">
+                        <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                        <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                        <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                        <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                        <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+                    </div>
+                    <p className='text-yellow-600'><span className='font-bold'>Price : </span>{price}</p>
+                    <button className="btn btn-outline btn-success"> Buy Now </button>
                 </div>
             </div>
         </div>
