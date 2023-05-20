@@ -23,7 +23,7 @@ const AddToys = () => {
                 if(response?.insertedId){
                     Swal.fire({
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Your Toy has been saved',
                         showConfirmButton: false,
                         timer: 1500
                       })

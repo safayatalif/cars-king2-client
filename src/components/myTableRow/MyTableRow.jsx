@@ -15,7 +15,7 @@ const MyTableRow = ({ myToy , handleDelete }) => {
             <td>{subCategory}</td>
             <td>{price}</td>
             <td>{availableQuantity}</td>
-            <td>
+            <td className='flex'>
                 <Link to={`/update-toy/${_id}`}><button className='btn btn-success btn-outline mr-4'> <FaRegEdit></FaRegEdit></button></Link>
                 <button onClick={()=>handleDelete(_id)} className='btn btn-success btn-outline'><FaTrashAlt></FaTrashAlt></button>
             </td>

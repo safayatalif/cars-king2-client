@@ -5,7 +5,8 @@ const Banner = () => {
     return (
         <div className="hero bg-base-200 rounded-lg">
             <div className="hero-content flex-col md:flex-row">
-                <div className="w-full md:w-1/2 rounded-lg">
+                <div className="w-full md:w-1/2 rounded-lg" data-aos="fade-up"
+                    data-aos-duration="3000">
                     <div className=" carousel rounded-box">
                         <div className="carousel-item w-full">
                             <img src="https://img.freepik.com/free-photo/green-car-with-word-ford-front_1340-23250.jpg?size=626&ext=jpg&ga=GA1.2.1613183627.1673832056&semt=sph" className="w-full" alt="Tailwind CSS Carousel component" />
@@ -30,7 +31,8 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div data-aos="fade-left"
+                    data-aos-duration="3000">
                     <h1 className="text-5xl font-bold">Box Office News!</h1>
                     <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <button className="btn btn-primary">Get Started</button>

@@ -5,7 +5,7 @@ import TableRow from '../../components/tableRow/TableRow';
 
 const AllToys = () => {
     const toyCarsData = useLoaderData();
-    const [carsData, setCarsData] = useState(toyCarsData)
+    const [carsData, setCarsData] = useState(toyCarsData.slice(0, 20))
     const [searchText, setSearchText] = useState("");
 
     const handleSearch = () => {

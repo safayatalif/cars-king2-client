@@ -47,17 +47,16 @@ const MyToys = () => {
     }
 
     return (
-        <div>
+        <div className='mb-8'>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
                 <h1 className='text-3xl font-bold'>My Toys</h1>
                 <p>
                     Introducing my impressive car toy collection!
                 </p>
             </div>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
-                    {/* head*/}
-                    <thead>
+            <div className="overflow-x-auto my-8">
+                <table className="table-normal text-center w-full">
+                    <thead className='bg-green-200'>
                         <tr>
                             <th>Toy</th>
                             <th>Seller</th>
