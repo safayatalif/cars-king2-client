@@ -1,15 +1,19 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { FaGoogle } from "react-icons/fa";
+import Swal from 'sweetalert2'
+
 
 
 const Register = () => {
 
-    const {createUser , userProfileUpdate  , logOut , googleSignIn} = useContext(AuthContext)
+    const { createUser, userProfileUpdate, logOut, googleSignIn } = useContext(AuthContext)
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
-    const handleSignUp = event=>{
+    const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -18,24 +22,35 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, password, photoURL);
         createUser(email, password)
-        .then(result=>{
-            const user = result.user;
-            userProfileUpdate(name , photoURL , user)
-            .then(result=>{
-                const updateUser = result?.user;
-                logOut()
-                navigate('/login')
-                console.log(updateUser)
+            .then(result => {
+                const user = result.user;
+                userProfileUpdate(name, photoURL, user)
+                    .then(result => {
+                        const updateUser = result?.user;
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Your Register Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        logOut()
+                        navigate('/login')
+                    })
             })
-        })
-        .catch(error=>console.log(error))
+            .catch(error => console.log(error))
     }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
-                console.log(user, 'sign in')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your Google LogIn Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                navigate(from, { replace: true });
             })
             .catch(error => console.log(error))
     }
@@ -43,7 +58,7 @@ const Register = () => {
     return (
         <div className="hero min-h-screen bg-base-200 my-12 rounded-lg">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
+                <div className="text-center">
                     <h1 className="text-5xl font-bold text-green-600">Please <span className='text-green-400'>Sign Up!</span></h1>
                     <p className="py-6">You can use all the features of our website by Sign Up in. If you don&apos;t, you can&apos;t. So Sign Up now.</p>
                 </div>
@@ -59,7 +74,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
-                            <input type="url" name='photoURL'  placeholder="Photo URL" className="input input-bordered" required />
+                            <input type="url" name='photoURL' placeholder="Photo URL" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">

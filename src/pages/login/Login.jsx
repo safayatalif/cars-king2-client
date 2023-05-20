@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import Swal from 'sweetalert2'
+
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -17,15 +19,21 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your LogIn Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 navigate(from, { replace: true });
             })
             .catch(error => console.log(error))
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200 my-12 rounded-lg">
+        <div className="hero min-h-screen bg-hero my-12 rounded-lg">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
+                <div className="text-center ">
                     <h1 className="text-5xl font-bold text-green-600">Please <span className='text-green-400'>Sign In!</span></h1>
                     <p className="py-6">You can use all the features of our website by logging in. If you don&apos;t, you can&apos;t. So login now.</p>
                 </div>

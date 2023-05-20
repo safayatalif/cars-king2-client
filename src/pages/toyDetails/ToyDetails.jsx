@@ -23,7 +23,7 @@ const ToyDetails = () => {
                         <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
                         <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
                     </div>
-                    <p className='text-yellow-600'><span className='font-bold'>Price : </span>{price}</p>
+                    <p className='text-yellow-600'><span className='font-bold text-orange-500'>Price : </span> ${price}</p>
                     <button className="btn btn-outline btn-success"> Buy Now </button>
                 </div>
             </div>

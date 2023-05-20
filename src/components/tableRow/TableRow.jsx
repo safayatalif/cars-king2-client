@@ -8,7 +8,7 @@ const TableRow = ({ carData }) => {
             <td>{toyName}</td>
             <td>{sellerName}</td>
             <td>{subCategory}</td>
-            <td>{price}</td>
+            <td>$ {price}</td>
             <td>{availableQuantity}</td>
             <td>
                 <Link to={`/toy-details/${_id}`}><button className='btn btn-success btn-outline'>View Details</button></Link>

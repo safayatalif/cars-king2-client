@@ -13,7 +13,7 @@ const MyTableRow = ({ myToy , handleDelete }) => {
             <td>{toyName}</td>
             <td>{sellerName}</td>
             <td>{subCategory}</td>
-            <td>{price}</td>
+            <td>$ {price}</td>
             <td>{availableQuantity}</td>
             <td className='flex'>
                 <Link to={`/update-toy/${_id}`}><button className='btn btn-success btn-outline mr-4'> <FaRegEdit></FaRegEdit></button></Link>

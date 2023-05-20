@@ -34,11 +34,9 @@ const UpdateToy = () => {
                         timer: 1500
                     })
                 }
-                // console.log(result);
             });
 
     }
-    // Price, available quantity, Detail description
     return (
         <div>
             <form onSubmit={handleJobUpdate} className="card-body bg-green-100 rounded-lg m-8 w-full md:w-3/4 mx-auto">
@@ -46,7 +44,7 @@ const UpdateToy = () => {
                     <label className="label">
                         <span className="label-text">Price</span>
                     </label>
-                    <input type="text" placeholder="Price" defaultValue={price} name='price' className="input input-bordered" />
+                    <input type="number" placeholder="Price" defaultValue={price} name='price' className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">

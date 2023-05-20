@@ -12,12 +12,9 @@ const AllToys = () => {
         fetch(`http://localhost:5000/getToysByText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 setCarsData(data);
             });
     };
-
-
     return (
         <div>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>

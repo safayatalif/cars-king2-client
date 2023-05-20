@@ -40,7 +40,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <img className='w-12 mr-4' src={kingIcon} alt="" />
-                <h1 className="text-xl md:text-2xl font-bold text-green-400"><span className='text-green-600'>Cars</span> King</h1>
+                <h1 className="text-xl md:text-2xl font-bold text-green-400"><span className='text-orange-500 text-xl md:text-3xl'>Cars K</span>ing</h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

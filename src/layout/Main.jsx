@@ -6,7 +6,7 @@ import Footer from '../components/Shared/Footer';
 
 const Main = () => {
     return (
-        <div>
+        <div className='font-serif'>
             <div className='px-4'>
                 <Header></Header>
                 <div className="min-h-[calc(100vh-200px)]">

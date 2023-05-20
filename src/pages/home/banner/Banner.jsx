@@ -3,9 +3,9 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="hero bg-base-200 rounded-lg">
+        <div className="bg-gradient-to-r from-green-100 to-green-50 rounded-lg">
             <div className="hero-content flex-col md:flex-row">
-                <div className="w-full md:w-1/2 rounded-lg" data-aos="fade-up"
+                <div className="w-full md:w-10/12 rounded-lg" data-aos="fade-up"
                     data-aos-duration="3000">
                     <div className=" carousel rounded-box">
                         <div className="carousel-item w-full">
@@ -31,11 +31,12 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-left"
+                <div className='space-y-4' data-aos="fade-left"
                     data-aos-duration="3000">
-                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <h1 className="text-5xl font-bold">Let the Fun Begin: <br />
+                        Your One-Stop <span className='text-orange-500'>Toy Shop</span></h1>
+                    <p className="py-6">Welcome to Cars Toy Emporium! Explore our wide selection of toy cars, from sleek sports cars to rugged off-road vehicles. Ignite your child&apos;s imagination and watch as they embark on thrilling adventures. With durable designs and vibrant colors, our toy cars guarantee hours of fun and excitement. Start your collection today!</p>
+                    <button className="btn btn-success">Shop Now</button>
                 </div>
             </div>
         </div>
