@@ -2,17 +2,19 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import MyTableRow from '../../components/myTableRow/MyTableRow';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setToys] = useState([]);
+    const [sorting, setSorting] = useState(-1)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/getToyCarsByEmail/${user?.email}`)
+        fetch(`https://cars-king-server.vercel.app/getToyCarsByEmail/${user?.email}?sort=${sorting}`)
             .then(res => res.json())
             .then(data => setToys(data))
-    }, [user])
+    }, [user, sorting])
 
     const handleDelete = _id => {
         // console.log('delete', _id);
@@ -31,7 +33,7 @@ const MyToys = () => {
                     'Your toy has been deleted.',
                     'success'
                 )
-                fetch(`http://localhost:5000/deleteToyCarsById/${_id}`, {
+                fetch(`https://cars-king-server.vercel.app/deleteToyCarsById/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -47,12 +49,19 @@ const MyToys = () => {
     }
 
     return (
-        <div className='mb-8'>
+        <div className='mb-8 bg-gradient-to-r from-green-100 to-green-50'>
+            <Helmet>
+                <title>My Toys -Cars King</title>
+            </Helmet>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
                 <h1 className='text-3xl font-bold'>My Toys</h1>
                 <p>
                     Introducing my impressive car toy collection!
                 </p>
+                <div className="btn-group">
+                    <button className="btn btn-active" onClick={() => setSorting(1)}>Ascending</button>
+                    <button className="btn" onClick={() => setSorting(-1)}>Descending</button>
+                </div>
             </div>
             <div className="overflow-x-auto my-8">
                 <table className="table-normal text-center w-full">

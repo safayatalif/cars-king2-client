@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
@@ -19,7 +20,7 @@ const UpdateToy = () => {
         }
 
         console.log(data);
-        fetch(`http://localhost:5000/updateToyCarsById/${_id}`, {
+        fetch(`https://cars-king-server.vercel.app/updateToyCarsById/${_id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
@@ -38,8 +39,15 @@ const UpdateToy = () => {
 
     }
     return (
-        <div>
-            <form onSubmit={handleJobUpdate} className="card-body bg-green-100 rounded-lg m-8 w-full md:w-3/4 mx-auto">
+        <div className='bg-gradient-to-r from-green-100 to-green-50'>
+            <Helmet>
+                <title>Update Toy -Cars King</title>
+            </Helmet>
+            <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
+                <h1 className='text-3xl font-bold'>Update Toy</h1>
+            </div>
+
+            <form onSubmit={handleJobUpdate} className="card-body rounded-lg m-8 w-full md:w-3/4 mx-auto">
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Price</span>

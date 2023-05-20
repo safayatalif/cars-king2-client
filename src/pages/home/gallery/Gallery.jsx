@@ -23,7 +23,7 @@ const Gallery = () => {
         "https://img.freepik.com/free-vector/military-truck-islated_1308-126561.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
     ]
     return (
-        <div className='bg-base-200 rounded-lg my-12 p-4'>
+        <div className='bg-gradient-to-r from-green-100 to-green-50 rounded-lg my-12 p-4'>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
                 <h1 className='text-3xl font-bold'>Photo Gallery</h1>
                 <p>Welcome to the Cars Toy Photo Gallery! In this collection, you will find a stunning array of toy cars that are sure to delight car enthusiasts of all ages. </p>

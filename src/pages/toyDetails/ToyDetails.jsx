@@ -1,11 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 
 const ToyDetails = () => {
     const toysData = useLoaderData();
     const { pictureURL, toyName, price, rating, _id, sellerName, sellerEmail, detailDescription, subCategory, availableQuantity } = toysData || {};
     return (
-        <div className="hero bg-base-200 rounded-lg my-12 p-4">
+        <div className="hero bg-gradient-to-r from-green-100 to-green-50 rounded-lg my-12 p-4">
+            <Helmet>
+                <title>Toy Details -Cars King</title>
+            </Helmet>
             <div className="hero-content flex-col md:flex-row-reverse">
                 <img src={pictureURL} className="w-full md:w-1/2 h-80 rounded-lg" />
                 <div className='space-y-4'>

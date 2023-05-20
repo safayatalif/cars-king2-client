@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from './../../contexts/AuthProvider';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 
 const AddToys = () => {
@@ -10,7 +11,7 @@ const AddToys = () => {
 
     const { register, handleSubmit, reset , formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/addToyCars', {
+        fetch('https://cars-king-server.vercel.app/addToyCars', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -36,7 +37,10 @@ const AddToys = () => {
     };
 
     return (
-        <div>
+        <div className='bg-gradient-to-r from-green-100 to-green-50'>
+            <Helmet>
+                <title>Add Toys -Cars King</title>
+            </Helmet>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
                 <h1 className='text-3xl font-bold'>Add A Toys</h1>
                 <p>Discover your dream toy car with our convenient

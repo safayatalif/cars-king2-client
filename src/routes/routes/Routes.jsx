@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: "all-toys",
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/getToyCars')
+                loader: () => fetch('https://cars-king-server.vercel.app/getToyCars')
             },
             {
                 path: "my-toys",
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path: "toy-details/:id",
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/getToyCarsById/${params.id}`)
+                loader: ({ params }) => fetch(`https://cars-king-server.vercel.app/getToyCarsById/${params.id}`)
             },
             {
                 path: "add-toys",
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
             {
                 path: "update-toy/:id",
                 element: <UpdateToy></UpdateToy>,
-                loader: ({ params }) => fetch(`http://localhost:5000/getToyCarsById/${params.id}`)
+                loader: ({ params }) => fetch(`https://cars-king-server.vercel.app/getToyCarsById/${params.id}`)
             }
         ]
     },

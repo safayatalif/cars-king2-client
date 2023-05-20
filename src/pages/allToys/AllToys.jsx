@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TableRow from '../../components/tableRow/TableRow';
+import { Helmet } from 'react-helmet-async';
 
 
 const AllToys = () => {
     const toyCarsData = useLoaderData();
-    const [carsData, setCarsData] = useState(toyCarsData.slice(0, 20))
+    const [carsData, setCarsData] = useState(toyCarsData);
     const [searchText, setSearchText] = useState("");
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/getToysByText/${searchText}`)
+        fetch(`https://cars-king-server.vercel.app/getToysByText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 setCarsData(data);
             });
     };
     return (
-        <div>
+        <div className='bg-gradient-to-r from-green-100 to-green-50'>
+            <Helmet>
+                <title>All Toys -Cars King</title>
+            </Helmet>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
                 <h1 className='text-3xl font-bold'>All Toys</h1>
                 <p>Welcome to our Cars Toy Collection! Explore a

@@ -16,7 +16,7 @@ const Category = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/getToyCarsByCategory/${category}`)
+        fetch(`https://cars-king-server.vercel.app/getToyCarsByCategory/${category}`)
             .then((res) => res.json())
             .then((data) => {
                 setCarToys(data);
@@ -24,7 +24,7 @@ const Category = () => {
     }, [category])
 
     return (
-        <div className='bg-base-200 rounded-lg my-12 p-4'>
+        <div className='bg-gradient-to-r from-green-100 to-green-50 rounded-lg my-12 p-4'>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
                 <h1 className='text-3xl font-bold'>Toys category</h1>
                 <p>Welcome to our Toy Category! Dive into a world of
