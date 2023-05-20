@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import MyTableRow from '../../components/myTableRow/MyTableRow';
+import Swal from 'sweetalert2'
+
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -11,6 +13,38 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [user])
+
+    const handleDelete = _id => {
+        // console.log('delete', _id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your toy has been deleted.',
+                    'success'
+                )
+                fetch(`http://localhost:5000/deleteToyCarsById/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            const remaining = myToys.filter(myToy => myToy._id !== _id);
+                            setToys(remaining);
+                        }
+                    })
+            }
+        })
+    }
 
     return (
         <div>
@@ -35,7 +69,7 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            myToys.map(myToy => <MyTableRow key={myToy._id} myToy={myToy}></MyTableRow>)
+                            myToys.map(myToy => <MyTableRow key={myToy._id} myToy={myToy} handleDelete={handleDelete}></MyTableRow>)
                         }
                     </tbody>
                 </table>

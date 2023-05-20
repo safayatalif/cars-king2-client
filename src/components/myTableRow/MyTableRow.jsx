@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { FaRegEdit ,FaTrashAlt } from "react-icons/fa";
+import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 
 
 
-const MyTableRow = ({myToy}) => {
-    const { toyName, price, sellerName, subCategory, availableQuantity , _id } = myToy || {};
+const MyTableRow = ({ myToy , handleDelete }) => {
+    const { toyName, price, sellerName, subCategory, availableQuantity, _id } = myToy || {};
 
     return (
         <tr>
@@ -16,8 +16,8 @@ const MyTableRow = ({myToy}) => {
             <td>{price}</td>
             <td>{availableQuantity}</td>
             <td>
-                <Link to={`/update-toy/${_id}`}><button className='btn btn-success btn-outline'> <FaRegEdit></FaRegEdit></button></Link>
-                <Link to={`/toy-details/${_id}`}><button className='btn btn-success btn-outline'><FaTrashAlt></FaTrashAlt></button></Link>
+                <Link to={`/update-toy/${_id}`}><button className='btn btn-success btn-outline mr-4'> <FaRegEdit></FaRegEdit></button></Link>
+                <button onClick={()=>handleDelete(_id)} className='btn btn-success btn-outline'><FaTrashAlt></FaTrashAlt></button>
             </td>
         </tr>
     );

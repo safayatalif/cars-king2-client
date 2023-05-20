@@ -18,7 +18,6 @@ const Login = () => {
             .catch(error => console.log(error))
     }
 
-
     return (
         <div className="hero min-h-screen bg-base-200 my-12 rounded-lg">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -32,16 +31,16 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                            <input type="email" name='email' placeholder="email" required className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                            <input type="password" name='password' placeholder="password" required className="input input-bordered" />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-success">Login</button>
+                            <button className="btn btn-success btn-outline">Login</button>
                         </div>
                         <label className="label">
                             <p><span>Don&apos;t Have An Account ?</span> <Link to="/register" className='underline text-red-400'>Register</Link></p>

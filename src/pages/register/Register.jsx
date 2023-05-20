@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import { FaGoogle } from "react-icons/fa";
+
 
 const Register = () => {
 
-    const {createUser , userProfileUpdate  , logOut} = useContext(AuthContext)
+    const {createUser , userProfileUpdate  , logOut , googleSignIn} = useContext(AuthContext)
     const navigate = useNavigate();
 
     const handleSignUp = event=>{
@@ -27,6 +29,15 @@ const Register = () => {
             })
         })
         .catch(error=>console.log(error))
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user, 'sign in')
+            })
+            .catch(error => console.log(error))
     }
 
     return (
@@ -64,6 +75,9 @@ const Register = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
+                        </div>
+                        <div className="form-control mt-6">
+                            <button onClick={handleGoogleSignIn} className="btn btn-success btn-outline"><FaGoogle className='mr-4'></FaGoogle>Google Sign In</button>
                         </div>
                         <label className="label">
                             <p>Already Have An Account ?<Link to="/login" className='underline text-red-400'> Login</Link></p>
