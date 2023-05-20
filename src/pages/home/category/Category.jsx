@@ -19,7 +19,6 @@ const Category = () => {
         fetch(`http://localhost:5000/getToyCarsByCategory/${category}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 setCarToys(data);
             });
     }, [category])

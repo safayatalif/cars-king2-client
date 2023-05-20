@@ -18,6 +18,7 @@ const Header = () => {
     const navItems = <>
         <li> <Link to="/">Home</Link> </li>
         <li> <Link to="/all-toys">All Toys</Link> </li>
+        <li> <Link to="/blog">Blog</Link> </li>
         {
             user && <>
                 <li> <Link to="/my-toys">My Toys</Link> </li>
