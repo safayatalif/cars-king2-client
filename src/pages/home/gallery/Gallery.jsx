@@ -29,7 +29,7 @@ const Gallery = () => {
                 <h1 className='text-3xl font-bold'>Photo Gallery</h1>
                 <p>Welcome to the Cars Toy Photo Gallery! In this collection, you will find a stunning array of toy cars that are sure to delight car enthusiasts of all ages. </p>
             </div>
-            <div className="carousel carousel-center w-full h-96 p-4 space-x-4 bg-neutral rounded-box" data-aos="fade-up"
+            <div className="carousel carousel-center w-full h-96 p-4 space-x-4 bg-hero rounded-box" data-aos="fade-up"
                 data-aos-duration="3000">
 
                 {
