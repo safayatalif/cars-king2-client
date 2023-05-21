@@ -5,14 +5,11 @@ import kingIcon from "../../assets/image/carKing.png"
 
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer p-10 bg-gradient-to-r from-slate-400 to-slate-200 text-base-content " data-aos="fade-down" data-aos-duration="3000">
+        <div className='bg-hero bg-cover'>
+            <footer className="footer p-10">
                 <div>
-                    <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <Link><img className='w-24' src={kingIcon} alt="" /></Link>
+                    <p>Cars king Industries Ltd.<br />Providing reliable tech since 1992</p>
                 </div>
                 <div>
                     <span className="footer-title">Company</span>
@@ -28,12 +25,19 @@ const Footer = () => {
                         <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
                         <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
                     </div>
-                    <Link><img className='w-24' src={kingIcon} alt="" /></Link>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text text-slate-100">Enter your email address</span>
+                        </label>
+                        <div className="relative">
+                            <input type="text" placeholder="username@site.com" className="input input-bordered w-full  md:pr-16 text-black" />
+                            <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                        </div>
+                    </div>
                 </div>
-
             </footer>
-            <div className='text-center p-4 bg-gradient-to-r from-slate-400 to-slate-200 text-base-content'>
-                <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+            <div className='text-center p-4'>
+                <p className='text-slate-300'>Copyright © 2023 - All right reserved by Cars King Industries Ltd</p>
             </div>
         </div>
     );

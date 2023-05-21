@@ -17,7 +17,7 @@ const AllToys = () => {
             });
     };
     return (
-        <div className='bg-gradient-to-r from-slate-400 to-slate-200 rounded-lg'>
+        <div className='bg-hero to-slate-200 rounded-lg'>
             <Helmet>
                 <title>All Toys -Cars King</title>
             </Helmet>
@@ -33,13 +33,13 @@ const AllToys = () => {
             </div>
 
             <div className='text-center'>
-                <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Search Toy" className="input input-bordered input-success w-full max-w-xs" />
+                <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Search Toy" className="input input-bordered input-success w-full max-w-xs text-black" />
                 <button className='btn btn-success  ml-4' onClick={handleSearch}>Search</button>
             </div>
 
             <div className="overflow-x-auto my-8" data-aos="zoom-in" data-aos-duration="3000">
                 <table className="table-normal text-center w-full">
-                    <thead className='bg-green-200'>
+                    <thead className='bg-green-400 text-black'>
                         <tr>
                             <th>Toy</th>
                             <th>Seller</th>

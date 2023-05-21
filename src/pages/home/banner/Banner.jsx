@@ -3,7 +3,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="hero bg-gradient-to-r from-slate-400 to-slate-200 rounded-lg">
+        <div className="hero bg-hero to-slate-200 rounded-lg">
             <div className="hero-content flex-col md:flex-row">
                 <div className="w-full md:w-10/12 rounded-lg" data-aos="fade-up"
                     data-aos-duration="3000">

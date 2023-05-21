@@ -6,7 +6,7 @@ const ToyDetails = () => {
     const toysData = useLoaderData();
     const { pictureURL, toyName, price, rating, _id, sellerName, sellerEmail, detailDescription, subCategory, availableQuantity } = toysData || {};
     return (
-        <div className="hero bg-gradient-to-r from-slate-200 to-slate-400 rounded-lg my-12 p-4">
+        <div className="hero bg-hero rounded-lg my-12 p-4">
             <Helmet>
                 <title>Toy Details -Cars King</title>
             </Helmet>

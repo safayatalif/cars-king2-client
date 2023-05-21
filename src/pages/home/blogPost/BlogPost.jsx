@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogPost = () => {
     return (
-        <div className='bg-gradient-to-r from-slate-200 to-slate-400 rounded-lg my-12 p-4'>
+        <div className='bg-hero rounded-lg my-12 p-4'>
             <h1 className='text-4xl font-bold my-6 text-center'>BLOG POSTS</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8' data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom" data-aos-duration="3000">

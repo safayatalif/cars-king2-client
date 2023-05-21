@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const Blog = () => {
     return (
-        <div className='bg-gradient-to-r from-slate-400 to-slate-200 rounded-lg mb-12'>
+        <div className='bg-hero to-slate-200 rounded-lg mb-12'>
             <Helmet>
                 <title>Blog -Cars King</title>
             </Helmet>

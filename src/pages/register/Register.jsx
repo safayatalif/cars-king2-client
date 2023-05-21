@@ -57,7 +57,7 @@ const Register = () => {
     }
 
     return (
-        <div className="bg-gradient-to-r from-slate-400 to-slate-200 my-12 rounded-lg">
+        <div className="bg-hero to-slate-200 my-12 rounded-lg">
             <Helmet>
                 <title>Register -Cars King</title>
             </Helmet>
@@ -67,31 +67,31 @@ const Register = () => {
                     <h1 className="text-5xl font-bold text-green-600">Please <span className='text-green-400'>Sign Up!</span></h1>
                     <p className="py-6">You can use all the features of our website by Sign Up in. If you don&apos;t, you can&apos;t. So Sign Up now.</p>
                 </div>
-                <div className="card flex-shrink-0 w-full md:w-1/2 shadow-2xl bg-base-100" data-aos="zoom-in" data-aos-duration="3000">
+                <div className="card flex-shrink-0 w-full md:w-1/2 shadow-2xl bg-hero" data-aos="zoom-in" data-aos-duration="3000">
                     <form onSubmit={handleSignUp} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text text-slate-100" >Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Name" className="input input-bordered" required />
+                            <input type="text" name='name' placeholder="Name" className="input text-black input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Photo URL</span>
+                                <span className="label-text text-slate-100" >Photo URL</span>
                             </label>
-                            <input type="url" name='photoURL' placeholder="Photo URL" className="input input-bordered" required />
+                            <input type="url" name='photoURL' placeholder="Photo URL" className="input text-black input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-slate-100" >Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                            <input type="email" name='email' placeholder="email" className="input text-black input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-slate-100" >Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                            <input type="password" name='password' placeholder="password" className="input text-black input-bordered" />
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>

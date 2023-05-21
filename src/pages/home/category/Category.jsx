@@ -24,7 +24,7 @@ const Category = () => {
     }, [category])
 
     return (
-        <div className='bg-gradient-to-r from-slate-400 to-slate-200 rounded-lg my-12 p-4'>
+        <div className=' to-slate-200 rounded-lg my-12 p-4'>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4' data-aos="fade-left"
                 data-aos-duration="3000">
                 <h1 className='text-3xl font-bold'>Toys category</h1>

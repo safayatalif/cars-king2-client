@@ -39,7 +39,7 @@ const UpdateToy = () => {
 
     }
     return (
-        <div className='bg-gradient-to-r from-slate-400 to-slate-200'>
+        <div className='bg-hero to-slate-200'>
             <Helmet>
                 <title>Update Toy -Cars King</title>
             </Helmet>

@@ -6,7 +6,7 @@ import contact4 from "../../../assets/image/phone-call.png"
 
 const Contact = () => {
     return (
-        <div className='bg-gradient-to-r from-slate-400 to-slate-200 rounded-lg my-12 p-4'>
+        <div className='bg-hero to-slate-200 backdrop-opacity-10 rounded-lg my-12 p-4'>
             <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-center space-y-4'>
                 <div className="text-center" data-aos="zoom-in" data-aos-duration="3000">
 

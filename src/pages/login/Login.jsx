@@ -32,7 +32,7 @@ const Login = () => {
     }
 
     return (
-        <div className="hero bg-gradient-to-r from-slate-400 to-slate-200 my-12 rounded-lg">
+        <div className="hero bg-hero to-slate-200 my-12 rounded-lg">
             <Helmet>
                 <title>Login -Cars King</title>
             </Helmet>
@@ -42,19 +42,19 @@ const Login = () => {
                     <h1 className="text-5xl font-bold text-green-600">Please <span className='text-green-400'>Sign In!</span></h1>
                     <p className="py-6">You can use all the features of our website by logging in. If you don&apos;t, you can&apos;t. So login now.</p>
                 </div>
-                <form onSubmit={handleSignIn} data-aos="zoom-in" data-aos-duration="3000" className="card flex-shrink-0 w-full md:w-1/2 shadow-2xl bg-base-100">
+                <form onSubmit={handleSignIn} data-aos="zoom-in" data-aos-duration="3000" className="card flex-shrink-0 w-full md:w-1/2 shadow-2xl bg-hero">
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-slate-100">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" required className="input input-bordered" />
+                            <input type="email" name='email' placeholder="email" required className="input text-black input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-slate-100">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" required className="input input-bordered" />
+                            <input type="password" name='password' placeholder="password" required className="input text-black input-bordered" />
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-success btn-outline">Login</button>

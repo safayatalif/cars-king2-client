@@ -21,7 +21,7 @@ const CategoryCard = ({ carToy }) => {
     }
 
     return (
-        <div className="card w-full bg-gradient-to-r from-slate-400 to-slate-200 shadow-md">
+        <div className="card w-full bg-hero to-slate-200 shadow-md">
             <figure className="px-4 pt-4">
                 <img src={pictureURL} alt="Shoes" className="rounded-xl h-56 w-full" />
             </figure>

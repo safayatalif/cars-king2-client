@@ -23,7 +23,7 @@ const Gallery = () => {
         "https://img.freepik.com/free-vector/military-truck-islated_1308-126561.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
     ]
     return (
-        <div className='bg-gradient-to-r from-slate-200 to-slate-400 rounded-lg my-12 p-4'>
+        <div className='bg-hero rounded-lg my-12 p-4'>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4' data-aos="fade-left"
                 data-aos-duration="3000">
                 <h1 className='text-3xl font-bold'>Photo Gallery</h1>

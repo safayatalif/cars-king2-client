@@ -37,7 +37,7 @@ const AddToys = () => {
     };
 
     return (
-        <div className='bg-gradient-to-r from-slate-400 to-slate-200'>
+        <div className='bg-hero '>
             <Helmet>
                 <title>Add Toys -Cars King</title>
             </Helmet>
@@ -48,64 +48,64 @@ const AddToys = () => {
                     out the form with your preferences .
                 </p>
             </div>
-            <form className="card-body bg-green-100 rounded-lg m-8 w-full md:w-3/4 mx-auto" data-aos="zoom-in" data-aos-duration="3000" onSubmit={handleSubmit(onSubmit)}>
+            <form className="card-body bg-hero rounded-lg m-8 w-full md:w-3/4 mx-auto" data-aos="zoom-in" data-aos-duration="3000" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Toy Name</span>
+                        <span className="label-text text-slate-100">Toy Name</span>
                     </label>
-                    <input className="input input-bordered" type='text' {...register("toyName", { required: true })} />
+                    <input className="input text-black input-bordered" type='text' {...register("toyName", { required: true })} />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Photo URL</span>
+                        <span className="label-text text-slate-100">Photo URL</span>
                     </label>
-                    <input className="input input-bordered" type='url' {...register("pictureURL", { required: true })} />
+                    <input className="input text-black input-bordered" type='url' {...register("pictureURL", { required: true })} />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Seller Email</span>
+                        <span className="label-text text-slate-100">Seller Email</span>
                     </label>
-                    <input className="input input-bordered" type='email' readOnly defaultValue={user?.email} {...register("sellerEmail")} />
+                    <input className="input text-black input-bordered" type='email' readOnly defaultValue={user?.email} {...register("sellerEmail")} />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Seller Name</span>
+                        <span className="label-text text-slate-100">Seller Name</span>
                     </label>
-                    <input className="input input-bordered" type='name' readOnly defaultValue={user?.displayName} {...register("sellerName")} />
+                    <input className="input text-black input-bordered" type='name' readOnly defaultValue={user?.displayName} {...register("sellerName")} />
                 </div>
                 <div className='md:flex gap-4'>
                     <div className="form-control md:w-1/3">
                         <label className="label">
-                            <span className="label-text">Price</span>
+                            <span className="label-text text-slate-100">Price</span>
                         </label>
-                        <input className="input input-bordered" type='number' {...register("price", { required: true })} />
+                        <input className="input text-black input-bordered" type='number' {...register("price", { required: true })} />
                     </div>
                     <div className="form-control md:w-1/3">
                         <label className="label">
-                            <span className="label-text">Rating</span>
+                            <span className="label-text text-slate-100">Rating</span>
                         </label>
-                        <input className="input input-bordered" type='number' min="0" max="5" step="0.1" {...register("rating", { required: true })} />
+                        <input className="input text-black input-bordered" type='number' min="0" max="5" step="0.1" {...register("rating", { required: true })} />
                     </div>
                     <div className="form-control md:w-1/3">
                         <label className="label">
-                            <span className="label-text">Available Quantity</span>
+                            <span className="label-text text-slate-100">Available Quantity</span>
                         </label>
-                        <input className="input input-bordered" type='number' {...register("availableQuantity", { required: true })} />
+                        <input className="input text-black input-bordered" type='number' {...register("availableQuantity", { required: true })} />
                     </div>
                 </div>
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Detail Description</span>
+                        <span className="label-text text-slate-100">Detail Description</span>
                     </label>
-                    <textarea className="textarea textarea-success" type='text' placeholder="Detail Description" {...register("detailDescription", { required: true })}></textarea>
+                    <textarea className="textarea textarea-success text-black" type='text' placeholder="Detail Description" {...register("detailDescription", { required: true })}></textarea>
                 </div>
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Sub Category</span>
+                        <span className="label-text text-slate-100">Sub Category</span>
                     </label>
-                    <select className='input input-bordered' {...register("subCategory", { required: true })}>
+                    <select className='input text-black input-bordered' {...register("subCategory", { required: true })}>
                         <option value="regular-cars">Regular Cars</option>
                         <option value="Sports-cars">Sports Cars</option>
                         <option value="truck-cars">Truck Cars</option>
