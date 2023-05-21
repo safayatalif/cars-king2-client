@@ -2,6 +2,10 @@ import React from 'react';
 import { Link, useRouteError } from 'react-router-dom';
 import errorPage from "../../assets/image/errorPage.jpg"
 import { Helmet } from 'react-helmet-async';
+import Lottie from "lottie-react";
+import errorLottie from '../../assets/error.json'
+
+
 
 const ErrorPage = () => {
     const { error, status } = useRouteError()
@@ -11,7 +15,9 @@ const ErrorPage = () => {
             <Helmet>
                 <title>Error -Cars King</title>
             </Helmet>
-            <img src={errorPage} alt="404 Not Found" className="w-10/12 h-96 mb-8" />
+            <div>
+                <Lottie className='w-full h-80 md:h-96' animationData={errorLottie}></Lottie>
+            </div>
             <h2 className='mb-8 font-extrabold text-3xl text-yellow-500'>
                 <span className='sr-only'>Error</span>
                 {status || 404}
