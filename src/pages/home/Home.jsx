@@ -5,6 +5,7 @@ import Category from './category/Category';
 import BlogPost from './blogPost/BlogPost';
 import Contact from './contact/Contact';
 import { Helmet } from 'react-helmet-async';
+import RunCar from './runCar/RunCar';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Gallery></Gallery>
             <Category></Category>
             <BlogPost></BlogPost>
+            <RunCar></RunCar>
             <Contact></Contact>
         </div>
     );

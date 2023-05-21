@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import Swal from 'sweetalert2'
 import { Helmet } from 'react-helmet-async';
-import { FaGoogle } from 'react-icons/fa';
+import { FaExclamationTriangle, FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
@@ -87,7 +87,9 @@ const Login = () => {
                             <p><span>Don&apos;t Have An Account ?</span> <Link to="/register" className='underline text-red-400'>Register</Link></p>
                         </label>
                         <label className="label">
-                            <p className='text-red-600'>{error}</p>
+                            {
+                                error && <span className='text-red-500'><FaExclamationTriangle className='inline-block'></FaExclamationTriangle> {error}</span>
+                            }
                         </label>
                     </div>
                 </form>

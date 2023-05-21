@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
-import { FaGoogle } from "react-icons/fa";
+import { FaExclamationTriangle, FaGoogle } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import { Helmet } from 'react-helmet-async';
 
@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
-    const { createUser, userProfileUpdate, logOut, googleSignIn , error , setError} = useContext(AuthContext)
+    const { createUser, userProfileUpdate, logOut, googleSignIn, error, setError } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -109,7 +109,9 @@ const Register = () => {
                             <p>Already Have An Account ?<Link to="/login" className='underline text-red-400'> Login</Link></p>
                         </label>
                         <label className="label">
-                            <p className='text-warning'>{error}</p>
+                            {
+                                error && <span className='text-red-500'><FaExclamationTriangle className='inline-block'></FaExclamationTriangle> {error}</span>
+                            }
                         </label>
                     </form>
                 </div>
