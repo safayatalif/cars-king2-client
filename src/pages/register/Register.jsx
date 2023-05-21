@@ -9,11 +9,11 @@ import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
-    const { createUser, userProfileUpdate, logOut, googleSignIn } = useContext(AuthContext)
+    const { createUser, userProfileUpdate, logOut, googleSignIn , error , setError} = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-
+    console.log(error)
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -28,6 +28,7 @@ const Register = () => {
                 userProfileUpdate(name, photoURL, user)
                     .then(result => {
                         const updateUser = result?.user;
+                        setError('')
                         Swal.fire({
                             icon: 'success',
                             title: 'Your Register Successfully',
@@ -38,13 +39,16 @@ const Register = () => {
                         navigate('/login')
                     })
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                setError(error.message)
+            })
     }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
+                setError('');
                 Swal.fire({
                     icon: 'success',
                     title: 'Your Google LogIn Successfully',
@@ -53,7 +57,9 @@ const Register = () => {
                 })
                 navigate(from, { replace: true });
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                setError(error.message)
+            })
     }
 
     return (
@@ -101,6 +107,9 @@ const Register = () => {
                         </div>
                         <label className="label">
                             <p>Already Have An Account ?<Link to="/login" className='underline text-red-400'> Login</Link></p>
+                        </label>
+                        <label className="label">
+                            <p className='text-warning'>{error}</p>
                         </label>
                     </form>
                 </div>

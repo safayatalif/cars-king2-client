@@ -3,14 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import Swal from 'sweetalert2'
 import { Helmet } from 'react-helmet-async';
+import { FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn, error, setError } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-
 
     const handleSignIn = event => {
         event.preventDefault();
@@ -20,6 +20,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                setError('')
                 Swal.fire({
                     icon: 'success',
                     title: 'Your LogIn Successfully',
@@ -28,7 +29,27 @@ const Login = () => {
                 })
                 navigate(from, { replace: true });
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+    console.log(error)
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                setError('')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your Google LogIn Successfully',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
 
     return (
@@ -59,8 +80,14 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-success btn-outline">Login</button>
                         </div>
+                        <div className="form-control mt-6">
+                            <button onClick={handleGoogleSignIn} className="btn btn-success btn-outline"><FaGoogle className='mr-4'></FaGoogle>Google Sign In</button>
+                        </div>
                         <label className="label">
                             <p><span>Don&apos;t Have An Account ?</span> <Link to="/register" className='underline text-red-400'>Register</Link></p>
+                        </label>
+                        <label className="label">
+                            <p className='text-red-600'>{error}</p>
                         </label>
                     </div>
                 </form>

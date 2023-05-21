@@ -61,7 +61,7 @@ const Category = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4  md:p-4' data-aos="fade-up"
                         data-aos-duration="3000">
                         {
                             carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
@@ -70,7 +70,7 @@ const Category = () => {
 
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4  md:p-4' data-aos="fade-up"
                         data-aos-duration="3000">
                         {
                             carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
@@ -78,7 +78,7 @@ const Category = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4  md:p-4' data-aos="fade-up"
                         data-aos-duration="3000">
                         {
                             carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
@@ -87,7 +87,7 @@ const Category = () => {
 
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4  md:p-4' data-aos="fade-up"
                         data-aos-duration="3000">
                         {
                             carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)

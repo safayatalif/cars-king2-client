@@ -21,8 +21,8 @@ const CategoryCard = ({ carToy }) => {
     }
 
     return (
-        <div className="card w-full bg-hero to-slate-200 shadow-md">
-            <figure className="px-4 pt-4">
+        <div className="card w-full bg-hero shadow-md">
+            <figure className="md:px-4 md:pt-4">
                 <img src={pictureURL} alt="Shoes" className="rounded-xl h-56 w-full" />
             </figure>
             <div className="card-body items-center text-center">

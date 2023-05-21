@@ -10,7 +10,7 @@ import { HelmetProvider } from 'react-helmet-async';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-7xl mx-auto bg-hero min-h-screen text-slate-100'>
+  <div className='max-w-7xl mx-auto bg-hero min-h-screen text-slate-100 overflow-hidden'>
     <HelmetProvider>
       <React.StrictMode>
         <AuthProvider>
