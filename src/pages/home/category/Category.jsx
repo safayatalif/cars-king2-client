@@ -24,8 +24,9 @@ const Category = () => {
     }, [category])
 
     return (
-        <div className='bg-gradient-to-r from-green-100 to-green-50 rounded-lg my-12 p-4'>
-            <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
+        <div className='bg-gradient-to-r from-slate-400 to-slate-200 rounded-lg my-12 p-4'>
+            <div className='text-center md:w-1/2 mx-auto py-8  space-y-4' data-aos="fade-left"
+                data-aos-duration="3000">
                 <h1 className='text-3xl font-bold'>Toys category</h1>
                 <p>Welcome to our Toy Category! Dive into a world of
                     miniature vehicles and endless play possibilities.
@@ -35,7 +36,8 @@ const Category = () => {
                     Find your perfect car and let the fun begin!</p>
             </div>
             <Tabs>
-                <TabList>
+                <TabList data-aos="fade-left"
+                    data-aos-duration="3000">
                     <Tab onClick={() => setCategory('regular-cars')}>
                         <img className='w-24' src={carKing} alt="" />
                         <p className='font-bold mt-4 text-center' >Regular Cars</p>
@@ -59,7 +61,8 @@ const Category = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                        data-aos-duration="3000">
                         {
                             carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
                         }
@@ -67,22 +70,16 @@ const Category = () => {
 
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                        data-aos-duration="3000">
                         {
                             carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
-                        {
-                            carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
-                        }
-                    </div>
-
-                </TabPanel>
-                <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                        data-aos-duration="3000">
                         {
                             carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
                         }
@@ -90,7 +87,17 @@ const Category = () => {
 
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                        data-aos-duration="3000">
+                        {
+                            carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
+                        }
+                    </div>
+
+                </TabPanel>
+                <TabPanel>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4' data-aos="fade-up"
+                        data-aos-duration="3000">
                         {
                             carToys.map(carToy => <CategoryCard key={carToy._id} carToy={carToy} ></CategoryCard>)
                         }

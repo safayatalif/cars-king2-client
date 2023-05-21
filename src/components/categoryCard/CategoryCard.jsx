@@ -14,14 +14,14 @@ const CategoryCard = ({ carToy }) => {
                 icon: 'warning',
                 title: 'You have to log in first to view details',
                 showConfirmButton: false,
-                timer: 1500
+                timer: 2000
             })
         }
 
     }
 
     return (
-        <div className="card w-full bg-gradient-to-r from-green-100 to-green-50 shadow-md">
+        <div className="card w-full bg-gradient-to-r from-slate-400 to-slate-200 shadow-md">
             <figure className="px-4 pt-4">
                 <img src={pictureURL} alt="Shoes" className="rounded-xl h-56 w-full" />
             </figure>

@@ -6,27 +6,27 @@ import contact4 from "../../../assets/image/phone-call.png"
 
 const Contact = () => {
     return (
-        <div className='bg-gradient-to-r from-green-100 to-green-50 rounded-lg my-12 p-4'>
+        <div className='bg-gradient-to-r from-slate-400 to-slate-200 rounded-lg my-12 p-4'>
             <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-center space-y-4'>
-                <div className="text-center">
+                <div className="text-center" data-aos="zoom-in" data-aos-duration="3000">
 
                     <img className='w-16 mx-auto' src={contact1} alt="" />
                     <h1 className='mt-4 font-bold'>Free Shipping</h1>
                     <p>On everything</p>
                 </div>
-                <div className="text-center ">
+                <div className="text-center " data-aos="zoom-in" data-aos-duration="3000">
 
                     <img className='w-16 mx-auto' src={contact4} alt="" />
                     <h1 className='mt-4 font-bold'>Give Us A Call on</h1>
                     <p>9824508178</p>
                 </div>
-                <div className="text-center ">
+                <div className="text-center " data-aos="zoom-in" data-aos-duration="3000">
 
                     <img className='w-16 mx-auto' src={contact2} alt="" />
                     <h1 className='mt-4 font-bold'>Bulk Inquiry</h1>
                     <p>info@dactoys.in</p>
                 </div>
-                <div className="text-center ">
+                <div className="text-center " data-aos="zoom-in" data-aos-duration="3000">
 
                     <img className='w-16 mx-auto' src={contact3} alt="" />
                     <h1 className='mt-4 font-bold'>Detsky&apos;s Quality Assurance</h1>

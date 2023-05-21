@@ -49,21 +49,24 @@ const MyToys = () => {
     }
 
     return (
-        <div className='mb-8 bg-gradient-to-r from-green-100 to-green-50'>
+        <div className='mb-8 bg-gradient-to-r from-slate-400 to-slate-200 rounded-lg'>
             <Helmet>
                 <title>My Toys -Cars King</title>
             </Helmet>
             <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
-                <h1 className='text-3xl font-bold'>My Toys</h1>
-                <p>
-                    Introducing my impressive car toy collection!
-                </p>
+                <div data-aos="fade-left"
+                    data-aos-duration="3000">
+                    <h1 className='text-3xl font-bold'>My Toys</h1>
+                    <p>
+                        Introducing my impressive car toy collection!
+                    </p>
+                </div>
                 <div className="btn-group">
                     <button className="btn btn-active" onClick={() => setSorting(1)}>Ascending</button>
                     <button className="btn" onClick={() => setSorting(-1)}>Descending</button>
                 </div>
             </div>
-            <div className="overflow-x-auto my-8">
+            <div className="overflow-x-auto my-8" data-aos="zoom-in" data-aos-duration="3000">
                 <table className="table-normal text-center w-full">
                     <thead className='bg-green-200'>
                         <tr>

@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import kingIcon from "../../assets/image/carKing.png"
 import { AuthContext } from '../../contexts/AuthProvider';
+import Swal from 'sweetalert2'
+
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext)
@@ -9,7 +11,12 @@ const Header = () => {
     const handleLogOut = () => {
         logOut()
             .then(result => {
-
+                Swal.fire({
+                    icon: 'success',
+                    title: 'You are LogOut',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
             })
             .catch(error => console.log())
 
@@ -23,13 +30,14 @@ const Header = () => {
             user && <>
                 <li> <Link to="/my-toys">My Toys</Link> </li>
                 <li> <Link to="/add-toys">Add Toys</Link> </li>
+                <button className='btn btn-outline btn-success btn-md mr-4'><Link onClick={handleLogOut}>LogOut</Link></button>
             </>
         }
 
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-gradient-to-r from-slate-200 to-slate-300 mb-8 rounded-lg" data-aos="fade-up" data-aos-duration="3000"  >
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -49,8 +57,7 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user ? <><button className='btn btn-outline btn-success btn-md mr-4'><Link onClick={handleLogOut}>LogOut</Link></button>
-                        <img className="w-12 rounded-full" title={user?.displayName} src={user?.photoURL} /></>
+                    user ? <img className="w-12 rounded-full" title={user?.displayName} src={user?.photoURL} />
                         : <button className='btn btn-outline btn-success btn-md'><Link to="/Login">Login</Link></button>
                 }
 

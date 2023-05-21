@@ -6,11 +6,11 @@ const ToyDetails = () => {
     const toysData = useLoaderData();
     const { pictureURL, toyName, price, rating, _id, sellerName, sellerEmail, detailDescription, subCategory, availableQuantity } = toysData || {};
     return (
-        <div className="hero bg-gradient-to-r from-green-100 to-green-50 rounded-lg my-12 p-4">
+        <div className="hero bg-gradient-to-r from-slate-200 to-slate-400 rounded-lg my-12 p-4">
             <Helmet>
                 <title>Toy Details -Cars King</title>
             </Helmet>
-            <div className="hero-content flex-col md:flex-row-reverse">
+            <div className="hero-content flex-col md:flex-row-reverse" data-aos="zoom-in" data-aos-duration="3000">
                 <img src={pictureURL} className="w-full md:w-1/2 h-80 rounded-lg" />
                 <div className='space-y-4'>
                     <h1 className="text-5xl font-bold">{toyName}</h1>

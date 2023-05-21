@@ -6,7 +6,7 @@ import kingIcon from "../../assets/image/carKing.png"
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-green-200 text-base-content ">
+            <footer className="footer p-10 bg-gradient-to-r from-slate-400 to-slate-200 text-base-content " data-aos="fade-down" data-aos-duration="3000">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>
@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
 
             </footer>
-            <div className='text-center p-4 bg-green-200 text-base-content'>
+            <div className='text-center p-4 bg-gradient-to-r from-slate-400 to-slate-200 text-base-content'>
                 <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
             </div>
         </div>

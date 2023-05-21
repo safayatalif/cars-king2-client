@@ -26,7 +26,7 @@ const AddToys = () => {
                         icon: 'success',
                         title: 'Your Toy has been saved',
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 2000
                       })
                       reset()
 
@@ -37,18 +37,18 @@ const AddToys = () => {
     };
 
     return (
-        <div className='bg-gradient-to-r from-green-100 to-green-50'>
+        <div className='bg-gradient-to-r from-slate-400 to-slate-200'>
             <Helmet>
                 <title>Add Toys -Cars King</title>
             </Helmet>
-            <div className='text-center md:w-1/2 mx-auto py-8  space-y-4'>
+            <div className='text-center md:w-1/2 mx-auto py-8  space-y-4' >
                 <h1 className='text-3xl font-bold'>Add A Toys</h1>
                 <p>Discover your dream toy car with our convenient
                     Toy Car Form! Simply fill
                     out the form with your preferences .
                 </p>
             </div>
-            <form className="card-body bg-green-100 rounded-lg m-8 w-full md:w-3/4 mx-auto" onSubmit={handleSubmit(onSubmit)}>
+            <form className="card-body bg-green-100 rounded-lg m-8 w-full md:w-3/4 mx-auto" data-aos="zoom-in" data-aos-duration="3000" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Toy Name</span>

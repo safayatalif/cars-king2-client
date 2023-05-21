@@ -32,7 +32,7 @@ const Register = () => {
                             icon: 'success',
                             title: 'Your Register Successfully',
                             showConfirmButton: false,
-                            timer: 1500
+                            timer: 2000
                         })
                         logOut()
                         navigate('/login')
@@ -49,7 +49,7 @@ const Register = () => {
                     icon: 'success',
                     title: 'Your Google LogIn Successfully',
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 2000
                 })
                 navigate(from, { replace: true });
             })
@@ -57,16 +57,17 @@ const Register = () => {
     }
 
     return (
-        <div className="bg-gradient-to-r from-green-100 to-green-50 my-12 rounded-lg">
+        <div className="bg-gradient-to-r from-slate-400 to-slate-200 my-12 rounded-lg">
             <Helmet>
                 <title>Register -Cars King</title>
             </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center">
+                <div className="text-center" data-aos="fade-left"
+                    data-aos-duration="3000">
                     <h1 className="text-5xl font-bold text-green-600">Please <span className='text-green-400'>Sign Up!</span></h1>
                     <p className="py-6">You can use all the features of our website by Sign Up in. If you don&apos;t, you can&apos;t. So Sign Up now.</p>
                 </div>
-                <div className="card flex-shrink-0 w-full md:w-1/2 shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full md:w-1/2 shadow-2xl bg-base-100" data-aos="zoom-in" data-aos-duration="3000">
                     <form onSubmit={handleSignUp} className="card-body">
                         <div className="form-control">
                             <label className="label">

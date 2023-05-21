@@ -32,14 +32,14 @@ const UpdateToy = () => {
                         icon: 'success',
                         title: 'Toy Update',
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 2000
                     })
                 }
             });
 
     }
     return (
-        <div className='bg-gradient-to-r from-green-100 to-green-50'>
+        <div className='bg-gradient-to-r from-slate-400 to-slate-200'>
             <Helmet>
                 <title>Update Toy -Cars King</title>
             </Helmet>
