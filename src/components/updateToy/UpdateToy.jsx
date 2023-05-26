@@ -50,21 +50,21 @@ const UpdateToy = () => {
             <form onSubmit={handleJobUpdate} className="card-body rounded-lg m-8 w-full md:w-3/4 mx-auto">
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Price</span>
+                        <span className="label-text text-slate-100">Price</span>
                     </label>
-                    <input type="number" placeholder="Price" defaultValue={price} name='price' className="input input-bordered" />
+                    <input type="number" placeholder="Price" defaultValue={price} name='price' className="input input-bordered  text-black" />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Available Quantity</span>
+                        <span className="label-text text-slate-100">Available Quantity</span>
                     </label>
-                    <input type="text" placeholder="Available Quantity" defaultValue={availableQuantity} name='quantity' className="input input-bordered" />
+                    <input type="text" placeholder="Available Quantity" defaultValue={availableQuantity} name='quantity' className="input input-bordered text-black" />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Details Description</span>
+                        <span className="label-text text-slate-100">Details Description</span>
                     </label>
-                    <textarea className="textarea textarea-success" name='details' defaultValue={detailDescription} placeholder="Details Description"></textarea>
+                    <textarea className="textarea textarea-success text-black" name='details' defaultValue={detailDescription} placeholder="Details Description"></textarea>
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Update</button>
